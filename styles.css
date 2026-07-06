@@ -64,7 +64,9 @@ h1,h2,h3{
   color: var(--ink);
   margin: 0 0 24px;
   line-height: 1.12;
+  overflow-wrap: break-word;
 }
+a, p{ overflow-wrap: break-word; word-break: break-word; }
 h2{ font-size: clamp(32px, 4vw, 46px); letter-spacing: 0.01em; }
 .section-head{ max-width: 640px; margin-bottom: 64px; }
 .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
@@ -73,6 +75,7 @@ p{ line-height: 1.8; color: var(--ink-soft); font-weight: 300; }
 .btn{
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   gap:10px;
   padding: 16px 34px;
   font-size: 12.5px;
@@ -184,6 +187,7 @@ p{ line-height: 1.8; color: var(--ink-soft); font-weight: 300; }
   position:absolute; top:22px; left:22px; right:-22px; bottom:-22px;
   border:1px solid var(--bordo); z-index:-1;
 }
+.sobre-text{ min-width:0; }
 .sobre-text .quote-block{ margin: 0 0 34px; }
 .sobre-text p{ font-size:16px; margin-bottom:20px; }
 .sobre-text p:last-of-type{ margin-bottom:0; }
@@ -310,19 +314,20 @@ p{ line-height: 1.8; color: var(--ink-soft); font-weight: 300; }
   background: linear-gradient(rgba(52,25,36,0.9), rgba(52,25,36,0.94)), url('assets/img/piscina-9.jpg') center/cover fixed;
 }
 .orcamento .container{ display:grid; grid-template-columns: 0.9fr 1.1fr; gap: 70px; align-items:start; }
+.orcamento-intro{ min-width:0; }
 .orcamento-intro h2{ color: var(--creme); }
 .orcamento-intro p{ color: rgba(251,249,245,0.78); }
-.orcamento-contacts{ margin-top:36px; display:flex; flex-direction:column; gap:14px; }
-.orcamento-contacts a{ font-size:14.5px; color: var(--creme); border-bottom:1px solid var(--line-light); padding-bottom:4px; width:fit-content; transition: border-color .3s ease, opacity .3s ease; }
+.orcamento-contacts{ margin-top:36px; display:flex; flex-direction:column; gap:14px; min-width:0; }
+.orcamento-contacts a{ font-size:14.5px; color: var(--creme); border-bottom:1px solid var(--line-light); padding-bottom:4px; max-width:100%; transition: border-color .3s ease, opacity .3s ease; }
 .orcamento-contacts a:hover{ border-color: var(--taupe); opacity:0.8; }
 
-.orc-form{ background: rgba(251,249,245,0.06); border:1px solid var(--line-light); padding: 44px; backdrop-filter: blur(6px); }
+.orc-form{ background: rgba(251,249,245,0.06); border:1px solid var(--line-light); padding: 44px; backdrop-filter: blur(6px); min-width:0; }
 .orc-row{ display:grid; grid-template-columns: 1fr 1fr; gap:20px; }
 .orc-field{ margin-bottom: 22px; }
 .orc-field label{ display:block; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color: var(--taupe); margin-bottom:10px; }
 .orc-field input, .orc-field select, .orc-field textarea{
   width:100%; background: transparent; border:none; border-bottom:1px solid var(--line-light);
-  color: var(--creme); font-family: var(--sans); font-size:15px; padding: 8px 2px; outline:none;
+  color: var(--creme); font-family: var(--sans); font-size:16px; padding: 8px 2px; outline:none;
   transition: border-color .3s ease;
 }
 .orc-field select option{ color: var(--ink); }
@@ -342,6 +347,7 @@ p{ line-height: 1.8; color: var(--ink-soft); font-weight: 300; }
   font-size:11.5px; letter-spacing:0.24em; text-transform:uppercase; color: var(--taupe);
   font-weight:500; margin-bottom:22px;
 }
+.footer-col{ min-width:0; }
 .footer-col a{ display:block; font-size:14.5px; color: rgba(251,249,245,0.85); margin-bottom:14px; transition: color .25s; }
 .footer-col a:hover{ color: var(--creme); }
 .footer-bottom{
@@ -455,6 +461,13 @@ p{ line-height: 1.8; color: var(--ink-soft); font-weight: 300; }
   .footer-grid{ grid-template-columns:1fr; }
   .hero-actions, .cta-actions, .project-cta-actions{ flex-direction:column; align-items:stretch; }
   .gallery-grid{ grid-template-columns: 1fr 1fr; }
+  .sobre-img-wrap img{ height:320px; }
+  .sobre-img-frame{ top:14px; left:14px; right:-14px; bottom:-14px; }
+  .hero-content p{ font-size:15.5px; }
+  .project-meta{ gap:24px; }
+}
+@media (max-width: 860px){
+  .orcamento{ background-attachment: scroll; }
 }
 
 /* mobile nav drawer */
