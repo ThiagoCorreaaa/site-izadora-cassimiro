@@ -260,7 +260,9 @@ p{ line-height: 1.8; color: var(--ink-soft); font-weight: 300; }
 .processo h2{ color: var(--creme); }
 .processo p.lead{ color: rgba(251,249,245,0.75); max-width:560px; }
 .steps{ margin-top: 76px; display:grid; grid-template-columns: repeat(4,1fr); gap:0; }
-.step{ padding: 0 30px 0 0; position:relative; }
+.step{ padding: 0 30px; position:relative; }
+.step:first-child{ padding-left: 0; }
+.step:last-child{ padding-right: 0; }
 .step:not(:last-child)::after{
   content:''; position:absolute; top:0; right:0; width:1px; height:100%; background: var(--line-light);
 }
@@ -337,7 +339,8 @@ p{ line-height: 1.8; color: var(--ink-soft); font-weight: 300; }
 .orc-field input::placeholder, .orc-field textarea::placeholder{ color: rgba(251,249,245,0.4); }
 .orc-field input:focus, .orc-field select:focus, .orc-field textarea:focus{ border-color: var(--creme); }
 .orc-field textarea{ resize: vertical; min-height: 90px; }
-.orc-submit{ margin-top:12px; width:100%; justify-content:center; }
+.orc-submit{ margin-top:12px; width:100%; justify-content:center; background: var(--creme); color: var(--bordo); border-color: var(--creme); }
+.orc-submit:hover{ background: var(--gold); border-color: var(--gold); color: var(--bordo-dark); }
 .orc-feedback{ margin-top:16px; font-size:13px; color: var(--taupe); opacity:0; transition: opacity .4s ease; }
 .orc-feedback.show{ opacity:1; }
 
